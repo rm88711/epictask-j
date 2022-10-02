@@ -28,15 +28,15 @@ public class SecurityConfiguration {
             .authorizeHttpRequests()
                 //Tarefas
                 .antMatchers(HttpMethod.GET, "/api/task/**").permitAll()
-                .antMatchers(HttpMethod.POST, "/api/task").authenticated()
-                .antMatchers(HttpMethod.DELETE, "/api/task/**").authenticated()
-                .antMatchers(HttpMethod.PUT, "/api/task/**").authenticated()
+                .antMatchers(HttpMethod.POST, "/api/task").permitAll()
+                .antMatchers(HttpMethod.DELETE, "/api/task/**").permitAll()
+                .antMatchers(HttpMethod.PUT, "/api/task/**").permitAll()
                 
                 //Usuários
                 .antMatchers(HttpMethod.GET, "/api/user/**").permitAll()
                 .antMatchers(HttpMethod.POST, "/api/user").permitAll()
-                .antMatchers(HttpMethod.DELETE, "/api/user/**").authenticated()
-                .antMatchers(HttpMethod.PUT, "/api/user/**").authenticated()
+                .antMatchers(HttpMethod.DELETE, "/api/user/**").permitAll()
+                .antMatchers(HttpMethod.PUT, "/api/user/**").permitAll()
                 .antMatchers(HttpMethod.POST, "/api/auth").permitAll()
                 
                 //h2
